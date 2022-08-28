@@ -12,33 +12,34 @@
             </div>
             </div>
     <% } %>
-</div>
 
-<button id="newmessagebutton" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newMessage">
-    Create A New Message
-</button>
-
-<div class="modal fade" id="newMessage">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <form id="messageform" method="post" action="/new-message">
-            <div class="modal-header">
-            <h5 class="modal-title">Create A New Message</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true"></span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <textarea maxlength="500" id="message" name="message"></textarea>
-            </div>
-            <div class="modal-footer">
-            <button type="submit" form="messageform" class="btn btn-primary">Send</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </form>
+    <button id="newmessagebutton" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newMessage">
+        Create Message
+    </button>
+    
+    <div class="modal fade" id="newMessage">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <form id="messageform" method="post" action="/new-message">
+                <div class="modal-header">
+                <h5 class="modal-title">Create A New Message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <textarea maxlength="500" id="message" name="message"></textarea>
+                </div>
+                <div class="modal-footer">
+                <button type="submit" form="messageform" class="btn btn-primary">Send</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    
+</div>
 
 <% } else if(user.member == 'false') {%>
 <div class="board-container sub_container">
@@ -50,33 +51,33 @@
             </div>
             </div>
     <% } %>
-</div>
-
-<button id="newmessagebutton" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newMessage">
-    Create A New Message
-</button>
-
-<div class="modal fade" id="newMessage">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <form id="messageform" method="post" action="/new-message">
-            <div class="modal-header">
-            <h5 class="modal-title">Create A New Message</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true"></span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <textarea maxlength="500" id="message" name="message"></textarea>
-            </div>
-            <div class="modal-footer">
-            <button type="submit" form="messageform" class="btn btn-primary">Send</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </form>
+    <button id="newmessagebutton" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newMessage">
+        Create Message
+    </button>
+    
+    <div class="modal fade" id="newMessage">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <form id="messageform" method="post" action="/new-message">
+                <div class="modal-header">
+                <h5 class="modal-title">Create A New Message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <textarea maxlength="500" id="message" name="message"></textarea>
+                </div>
+                <div class="modal-footer">
+                <button type="submit" form="messageform" class="btn btn-primary">Send</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    
+</div>
 
 <% } %>
 <%} else {%>
