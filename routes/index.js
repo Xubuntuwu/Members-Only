@@ -35,7 +35,7 @@ router.get('/sign-up', (req, res, next)=>{
 
 router.post('/sign-up', async(req, res, next) => {
     const sameuser = await User.find({username: req.body.username}).lean().exec();
-    console.log(sameuser)
+    console.log('same user' ,sameuser)
     if(sameuser.length>=1){
         res.render('sign-up', {signup_error: 'Username already exists, choose a different one'})
     }
@@ -101,7 +101,6 @@ router.post('/sign-out', (req, res, next)=>{
 
 // account pages
 router.get('/account/personal', async(req, res, next)=>{
-    console.log('USSEERRR', req.user);
     if(req.user){
         res.render('account', {layout: 'inside', title: 'My Account'});
     }

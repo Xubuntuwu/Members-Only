@@ -10,6 +10,7 @@ body{
 }
 #main-navbar{
     grid-row: 1/2;
+    z-index: 10;
 }
 #body-container{
     grid-row: 2/3;
@@ -76,11 +77,10 @@ body{
 
 #newmessagebutton{
     position: absolute;
-    bottom: 100px;
-    right: 100px;
+    bottom: 10px;
+    right: 10px;
     border-radius: 50%;
     aspect-ratio: 1;
-
 }
 
 .board-container{
@@ -91,6 +91,7 @@ body{
     align-content: start;
     /* justify-items: stretch; */
     gap: 1rem;
+    padding-bottom: 20px;
 }
 
 .board-container .card{
