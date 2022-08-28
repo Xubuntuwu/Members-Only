@@ -1,8 +1,7 @@
 <h1 class="text-center">Messaging Board</h1>
 
 <% if(typeof(user)!= 'undefined') {%>
-<% if(user.member == 'true') {%>
-
+    <% if(user.member == 'true') {%>
 <div class="board-container sub_container">
     <% for(var i=0; i<messages.length;  i++) { %>
         <div class="card text-white bg-primary mb-3 rounded-border rounded">
@@ -41,7 +40,7 @@
     </div>
   </div>
 
-<% } else if(user.member == 'true') {%>
+<% } else if(user.member == 'false') {%>
 <div class="board-container sub_container">
     <% for(var i=0; i<messages.length;  i++) { %>
         <div class="card text-white bg-primary mb-3">
