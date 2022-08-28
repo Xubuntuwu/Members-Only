@@ -1,0 +1,23 @@
+<div class="sign-up-container sub_container form_outside_container">
+    <h1 class="mb-5 text-primary">Create a new account!</h1>
+    <div class="form-container card border-primary">
+        <% if(typeof(signup_error)!='undefined'){%>
+            <div class="card border-danger mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                  <p class="card-text"><%-signup_error%></p>
+                </div>
+              </div>
+        <%}%>
+        <form method="post" action="/sign-up">
+            <div>
+                <label class="form-label" for="username">Username: </label>
+                <input class="form-control" type="text" id="username" name="username" placeholder="username"/>
+            </div>
+            <div>
+                <label class="form-label" for="password">Password: </label>
+                <input class="form-control" type="password" id="password" name="password" placeholder="password"/>
+            </div>
+            <button class="btn btn-primary mt-5" type="submit">Create</button>
+        </form>
+    </div>
+</div>

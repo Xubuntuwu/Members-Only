@@ -1,0 +1,97 @@
+<h1 class="text-center">Messaging Board</h1>
+
+<% if(typeof(user)!= 'undefined' && user.member == 'true') {%>
+
+<div class="board-container sub_container">
+    <% for(var i=0; i<messages.length;  i++) { %>
+        <div class="card text-white bg-primary mb-3 rounded-border rounded">
+            <div class="card-header"> <%=messages[i].timestamp %> </div>
+            <div class="card-body">
+                <h4 class="card-title"> <%= messages[i].user.username %> </h4>
+                <p class="card-text"> <%=messages[i].content%> </p>
+            </div>
+            </div>
+    <% } %>
+</div>
+
+<button id="newmessagebutton" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newMessage">
+    Create A New Message
+</button>
+
+<div class="modal fade" id="newMessage">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form id="messageform" method="post" action="/new-message">
+            <div class="modal-header">
+            <h5 class="modal-title">Create A New Message</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"></span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <textarea maxlength="500" id="message" name="message"></textarea>
+            </div>
+            <div class="modal-footer">
+            <button type="submit" form="messageform" class="btn btn-primary">Send</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<%} else if (user.member == 'false') {%>
+
+<div class="board-container sub_container">
+    <% for(var i=0; i<messages.length;  i++) { %>
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h4 class="card-title"> Anonymous User </h4>
+                <p class="card-text"> <%=messages[i].content%> </p>
+            </div>
+            </div>
+    <% } %>
+</div>
+
+<button id="newmessagebutton" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newMessage">
+    Create A New Message
+</button>
+
+<div class="modal fade" id="newMessage">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form id="messageform" method="post" action="/new-message">
+            <div class="modal-header">
+            <h5 class="modal-title">Create A New Message</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"></span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <textarea maxlength="500" id="message" name="message"></textarea>
+            </div>
+            <div class="modal-footer">
+            <button type="submit" form="messageform" class="btn btn-primary">Send</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<%} else {%>
+
+<div class="board-container sub_container">
+    <% for(var i=0; i<messages.length;  i++) { %>
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h4 class="card-title"> Anonymous User </h4>
+                <p class="card-text"> <%=messages[i].content%> </p>
+            </div>
+            </div>
+    <% } %>
+</div>
+
+<% } %>

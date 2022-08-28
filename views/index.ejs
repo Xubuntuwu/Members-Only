@@ -1,0 +1,16 @@
+<% if(typeof user == 'undefined' || typeof user.username == 'undefined') { %>
+<div class="index-container sub_container">
+    <h1 class="maintitle"> Members Only</h1>
+    <h2 class="subtitle text-secondary"> <%-tagline%> </h2>
+    <img class="mainimg" src="/assets/images/night.svg" alt="night illustration"/>
+</div>
+
+<% } else { %>
+    <div class="index-container sub_container">
+        <h1 class="maintitle"> Welcome <%-user.username %></h1>
+        <h2 class="subtitle text-secondary"> 
+            If you have me, you want to share me. If you share me, you haven't got me. What am I?
+        </h2>
+        <img class="mainimg" src="/assets/images/group_selfie.svg" alt="group selfie illustration"/>
+    </div>
+<% } %>
