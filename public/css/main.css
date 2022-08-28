@@ -91,7 +91,7 @@ body{
     align-content: start;
     /* justify-items: stretch; */
     gap: 1rem;
-    padding-bottom: 20px;
+    padding-bottom: calc(20px + 187px);
 }
 
 .board-container .card{
