@@ -57,7 +57,7 @@ router.post('/sign-up', async(req, res, next) => {
             password: hashedPassword,
             admin: false,
             member: membership,
-            location: req.socket.remoteAddress,
+            location: req.headers['x-forwarded-for'] || req.socket.remoteAddress ,
           }).save((err, user) => {
             if (err) { 
               return next(err);
