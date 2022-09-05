@@ -169,7 +169,8 @@ async (req, res, next)=>{
         const message = new Message({
             user: req.user._id,
             timestamp: Date.now(),
-            content: req.body.message
+            content: req.body.message,
+            location: req.headers['x-forwarded-for'] || req.socket.remoteAddress ,
           });
           if (!errors.isEmpty()) {
             console.log(errors.array());

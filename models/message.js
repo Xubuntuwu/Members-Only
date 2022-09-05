@@ -7,6 +7,7 @@ const Message = mongoose.model(
       user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
       timestamp: { type: Date, required: true },
       content: {type: String, required: true, maxlength: 500},
+      location: {type: String, required: true},
     })
   );
 
